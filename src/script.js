@@ -25,7 +25,7 @@ loadingManager.onError = () => {
 const textureLoader = new THREE.TextureLoader(loadingManager);
 
 // Color Texture
-const colorTexture = textureLoader.load('/textures/door/color.jpg');
+const colorTexture = textureLoader.load('/textures/minecraft.png');
 colorTexture.colorSpace = THREE.SRGBColorSpace;
 
 // Alpha Texture
@@ -52,10 +52,22 @@ metalnessTexture.colorSpace = THREE.SRGBColorSpace;
 const roughnessTexture = textureLoader.load('/textures/door/roughness.jpg');
 roughnessTexture.colorSpace = THREE.SRGBColorSpace;
 
-colorTexture.repeat.x = 2;
-colorTexture.repeat.y = 3;
-colorTexture.wrapS = THREE.RepeatWrapping;
-colorTexture.wrapT = THREE.RepeatWrapping;
+// colorTexture.repeat.x = 2;
+// colorTexture.repeat.y = 3;
+// colorTexture.wrapS = THREE.RepeatWrapping;
+// colorTexture.wrapT = THREE.RepeatWrapping;
+
+// colorTexture.offset.x = 0.5;
+// colorTexture.offset.y = 0.5;
+
+// colorTexture.rotation = Math.PI * 0.25;
+// colorTexture.center.x = 0.5;
+// colorTexture.center.y = 0.5;
+
+// Filters
+colorTexture.generateMipmaps = false;
+colorTexture.minFilter = THREE.NearestFilter;
+colorTexture.magFilter = THREE.NearestFilter;
 
 // Debug UI
 const gui = new GUI({
